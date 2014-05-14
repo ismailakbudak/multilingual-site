@@ -1,0 +1,31 @@
+
+<h1> <%= t 'views.product.index.title' %> </h1>
+<table>
+  <thead>
+    <tr>
+      <th><%= Product.human_attribute_name(:name) %></th>
+      <th><%= Product.human_attribute_name(:description) %></th>
+      <th><%= Product.human_attribute_name(:price) %></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.description %></td>
+        <td><%= product.price %></td>
+        <td><%= link_to I18n.t('views.show'), product %></td>
+        <td><%= link_to I18n.t('views.edit'), edit_product_path(product) %></td>
+        <td><%= link_to I18n.t('views.destroy'), product, method: :delete, data: { confirm: I18n.t('views.are_you_sure') } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to I18n.t('views.product.index.new_product'), new_product_path %>

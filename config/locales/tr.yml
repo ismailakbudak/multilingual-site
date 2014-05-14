@@ -1,0 +1,83 @@
+# ruby encoding: utf-8
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+tr: 
+  # Default error messages
+  errors:
+    error: 
+        one:   "%{count}  hata gerçekleşti"
+        other: "%{count}  hata gerçekleşti"
+    message:
+        sory: Üzgünüm         
+    # The default format to use in full error messages.
+    format: "%{attribute} %{message}"
+
+    # The values :model, :attribute and :value are always available for interpolation
+    # The value :count is available when applicable. Can be used for pluralization.
+    messages: &errors_messages
+      inclusion: "is not included in the list"
+      exclusion: "is reserved"
+      invalid: "geçersiz"
+      confirmation: " alanı %{attribute} alanı ile aynı değil"
+      accepted: "must be accepted"
+      empty: "alanı boş olamaz"
+      blank: "alanı boş geçilemez"
+      present: "alanı boş olmamalıdır"
+      too_long:
+        one: "alanı çok uzun (maksimum  1 karakter)"
+        other: "alanı çok uzun (maksimum  %{count} karakter)" 
+      too_short:
+        one: "alanı çok kısa (minimum  1 karakter)"
+        other: "alanı çok kısa (minimum  %{count} karakter)"
+      wrong_length:
+        one: "alanının uzunluğu doğru değil (1 karakter olmalı)"
+        other: "alanının uzunluğu doğru değil (%{count} karakter olmalı)"
+      not_a_number: "alanı sayı değil"
+      not_an_integer: "alanı sayı olmalı"
+      greater_than: "alanı %{count} e göre büyük olmalıdır"
+      greater_than_or_equal_to: "alanı %{count} e göre büyük yada eşit olmalıdır"
+      equal_to: "alanı %{count} e göre eşit olmalıdır"
+      less_than: "alanı %{count} küçük olmalıdır"
+      less_than_or_equal_to: "alanı %{count} e göre küçük yada eşit olmalıdır"
+      other_than: "alanı %{count} e göre farklı olmalıdır"
+      odd: "alanı tek olmalıdır"
+      even: "alanı çift olmalıdır"
+      taken: "kullanılıyor"
+
+  activerecord:
+    errors:  
+      template:
+        header:
+          one:    "%{model} kaydı yapılırken 1 hata gerçekleşti"
+          other:  "%{model} kaydı yapılırken %{count} hata gerçekleşti"
+        body: "Aşşağıdaki alanlarda hata oluştu :"       
+      messages:
+        record_invalid: "Doğrulama hatalı: %{errors}"
+        restrict_dependent_destroy:
+          one: "%{record} kaydına bağlı olduğu için silinemez"
+          many: "%{record} kayıtlarına bağlı olduğu için silinemez"
+        <<: *errors_messages
+      full_messages:
+        format: "%{attribute} %{message}"     
+
+
+ 
